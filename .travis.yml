@@ -8,7 +8,7 @@ android:
     - tools
     - tools
     - platform-tools
-    - build-tools-29.0.0
+    - build-tools-29.0.3
     - $ANDROID_TARGET
     - extra-android-m2repository
     - extra-google-m2repository
