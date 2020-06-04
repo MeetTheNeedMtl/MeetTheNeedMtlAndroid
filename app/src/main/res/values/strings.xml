@@ -3,4 +3,7 @@
     <string name="usernameText">Username</string>
     <string name="passwordText">Password</string>
     <string name="loginText">Login</string>
+    <string name="goToScanText">Go to Scan Page</string>
+    <string name="logoutText">Logout</string>
+    <string name="welcomeText">Welcome %1$s!</string>
 </resources>
