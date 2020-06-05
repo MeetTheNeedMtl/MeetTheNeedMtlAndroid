@@ -54,6 +54,8 @@ public class LoginFragment extends Fragment {
             return false;
         } else {
             showToast(getString(R.string.loginSuccessText));
+            SharedPreferences.INSTANCE.saveBoolean(Objects.requireNonNull(getContext()), SharedPreferences.isUserLoggedIn, true);
+            SharedPreferences.INSTANCE.save(Objects.requireNonNull(getContext()), SharedPreferences.user, username);
             return true;
         }
     }
@@ -64,7 +66,6 @@ public class LoginFragment extends Fragment {
                 .replace(R.id.loginFragmentContainer, homeFragment, "homeFragment")
                 .addToBackStack(null)
                 .commit();
-        SharedPreferences.INSTANCE.saveBoolean(Objects.requireNonNull(getContext()), SharedPreferences.isUserLoggedIn, true);
     }
 
     private void showToast(String value) {

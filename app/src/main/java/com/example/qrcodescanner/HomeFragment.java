@@ -14,6 +14,8 @@ import java.util.Objects;
 
 public class HomeFragment extends Fragment {
 
+    private static final String DEFAULT_NAME = "User";
+
     public HomeFragment() { }
 
     @Override
@@ -26,7 +28,7 @@ public class HomeFragment extends Fragment {
 
         View homeView = inflater.inflate(R.layout.fragment_home, container, false);
         TextView welcomeTv = homeView.findViewById(R.id.welcomeTv);
-        welcomeTv.setText(getResources().getString(R.string.welcomeText, "user"));
+        welcomeTv.setText(getResources().getString(R.string.welcomeText, getUsername()));
         Button goToScanBtn = homeView.findViewById(R.id.goToScanBtn);
         Button logoutBtn = homeView.findViewById(R.id.logoutBtn);
 
@@ -35,6 +37,10 @@ public class HomeFragment extends Fragment {
         logoutBtn.setOnClickListener(view -> logout());
 
         return homeView;
+    }
+
+    private String getUsername() {
+        return SharedPreferences.INSTANCE.read(Objects.requireNonNull(getContext()), SharedPreferences.user, DEFAULT_NAME);
     }
 
     private void goToScan() {
