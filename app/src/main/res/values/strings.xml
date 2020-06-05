@@ -6,4 +6,6 @@
     <string name="goToScanText">Go to Scan Page</string>
     <string name="logoutText">Logout</string>
     <string name="welcomeText">Welcome %1$s!</string>
+    <string name="loginFailText">Login Unsuccessful: Invalid username/password</string>
+    <string name="loginSuccessText">Login Successful</string>
 </resources>
