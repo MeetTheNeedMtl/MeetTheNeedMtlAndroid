@@ -6,13 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-
 import java.util.Objects;
+
+import androidx.fragment.app.Fragment;
 
 public class LoginFragment extends Fragment {
 
@@ -40,6 +38,7 @@ public class LoginFragment extends Fragment {
     }
 
     private void login() {
+        goToHome(); // REMOVE THIS
         if (isSignInSuccessful(usernameField.getText().toString().trim(), passwordField.getText().toString().trim())) {
             goToHome();
         } else {
