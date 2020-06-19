@@ -38,7 +38,6 @@ public class LoginFragment extends Fragment {
     }
 
     private void login() {
-        goToHome(); // REMOVE THIS
         if (isSignInSuccessful(usernameField.getText().toString().trim(), passwordField.getText().toString().trim())) {
             goToHome();
         } else {
@@ -48,15 +47,19 @@ public class LoginFragment extends Fragment {
     }
 
     private boolean isSignInSuccessful(String username, String password) {
-        if (username.isEmpty() || password.isEmpty()) {
-            showToast(getString(R.string.loginFailText));
-            return false;
-        } else {
-            showToast(getString(R.string.loginSuccessText));
-            SharedPreferences.INSTANCE.saveBoolean(Objects.requireNonNull(getContext()), SharedPreferences.isUserLoggedIn, true);
-            SharedPreferences.INSTANCE.save(Objects.requireNonNull(getContext()), SharedPreferences.user, username);
-            return true;
+        Authentication authentication = new Authentication(username, password);
+        boolean isSignInSuccess = false;
+        switch (authentication.login()) {
+            case INVALID: showToast(getString(R.string.loginInvalidText)); break;
+            case UNSUCCESSFUL: showToast(getString(R.string.loginUnsuccessfulText)); break;
+            case SUCCESSFUL:  showToast(getString(R.string.loginSuccessText));
+                SharedPreferences.INSTANCE.saveBoolean(Objects.requireNonNull(getContext()), SharedPreferences.isUserLoggedIn, true);
+                SharedPreferences.INSTANCE.save(Objects.requireNonNull(getContext()), SharedPreferences.user, username);
+                isSignInSuccess = true;
+                break;
+            default: showToast(getString(R.string.loginErrorText)); break;
         }
+        return isSignInSuccess;
     }
 
     private void goToHome() {
