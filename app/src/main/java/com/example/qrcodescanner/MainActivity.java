@@ -33,4 +33,9 @@ public class MainActivity extends AppCompatActivity {
     private boolean isUserLoggedIn() {
         return SharedPreferences.INSTANCE.readBoolean(getApplicationContext(), SharedPreferences.isUserLoggedIn, false);
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }
