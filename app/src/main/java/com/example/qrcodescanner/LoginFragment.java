@@ -8,14 +8,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import org.jetbrains.annotations.NotNull;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.util.Objects;
 
 import androidx.fragment.app.Fragment;
-
-import org.jetbrains.annotations.NotNull;
-import org.json.JSONObject;
-
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
@@ -50,7 +49,7 @@ public class LoginFragment extends Fragment {
         String password = passwordField.getText().toString().trim();
 
         if (username.isEmpty() || password.isEmpty()) {
-            showToast(LoginStatus.INVALID);
+            //showToast(LoginStatus.INVALID);
             clearFields();
         }
 
@@ -62,7 +61,7 @@ public class LoginFragment extends Fragment {
                 json.put("password", password);
             } catch (Exception e) {
                 System.out.println("Error(1) creating JSON object: " + e.getMessage());
-                showToast(LoginStatus.ERROR);
+                //showToast(LoginStatus.ERROR);
                 clearFields();
                 return;
             }
@@ -73,7 +72,7 @@ public class LoginFragment extends Fragment {
                     @Override
                     public void onFailure(@NotNull Call call, @NotNull IOException e) {
                         System.out.println("API call failed(1): " + e.getMessage());
-                        showToast(LoginStatus.ERROR);
+                        //showToast(LoginStatus.ERROR);
                         clearFields();
                     }
 
@@ -91,26 +90,26 @@ public class LoginFragment extends Fragment {
                                 user = parseResponse(jsonResponse);
                             } catch (Exception e) {
                                 System.out.println("Error(2) creating JSON object: " + e.getMessage());
-                                showToast(LoginStatus.ERROR);
+                               //showToast(LoginStatus.ERROR);
                                 clearFields();
                                 return;
                             }
 
                             if (user != null && !user.isEmpty() && user.equals(username)) {
-                                showToast(LoginStatus.SUCCESSFUL);
+                                //showToast(LoginStatus.SUCCESSFUL);
                                 SharedPreferences.INSTANCE.saveBoolean(Objects.requireNonNull(getContext()), SharedPreferences.isUserLoggedIn, true);
                                 SharedPreferences.INSTANCE.save(Objects.requireNonNull(getContext()), SharedPreferences.user, username);
                                 clearFields();
                                 goToHome();
                             } else {
-                                showToast(LoginStatus.UNSUCCESSFUL);
+                                //showToast(LoginStatus.UNSUCCESSFUL);
                                 clearFields();
                             }
                         }
 
                         else {
                             System.out.println("API call failed(2): " + Objects.requireNonNull(response.body()).string());
-                            showToast(LoginStatus.ERROR);
+                            //showToast(LoginStatus.ERROR);
                             clearFields();
                         }
                     }
@@ -119,7 +118,7 @@ public class LoginFragment extends Fragment {
 
             catch (Exception e) {
                 System.out.println("API call failed(3): " + e.getMessage());
-                showToast(LoginStatus.ERROR);
+                //showToast(LoginStatus.ERROR);
                 clearFields();
             }
         }
