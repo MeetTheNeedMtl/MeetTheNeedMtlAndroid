@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">QRCodeScanner</string>
+    <string name="usernameText">Username</string>
+    <string name="passwordText">Password</string>
+    <string name="loginText">Login</string>
+    <string name="goToScanText">Go to Scan Page</string>
+    <string name="logoutText">Logout</string>
+    <string name="welcomeText">Welcome %1$s!</string>
+    <string name="loginErrorText">Sorry something went wrong, try again.</string>
+    <string name="loginInvalidText">Username or password is empty.</string>
+    <string name="loginUnsuccessfulText">Login Unsuccessful: Invalid username/password</string>
+    <string name="loginSuccessText">Login Successful</string>
 </resources>
