@@ -7,21 +7,116 @@
     tools:context=".ResultsActivity">
 
     <TextView
-        android:id="@+id/resultTxt"
+        android:id="@+id/name"
+        android:text="name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:textSize="30sp"
         android:textColor="#000000"
+        android:paddingTop="10dp"
        />
+    <TextView
+        android:id="@+id/birthday"
+        android:text="birthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/name"
+        android:textSize="30sp"
+        android:textColor="#000000"
+        android:paddingTop="10dp"
+        />
+    <TextView
+        android:id="@+id/numberOfBaskets"
+        android:text="numBaskets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/birthday"
+        android:textSize="30sp"
+        android:textColor="#000000"
+        android:paddingTop="10dp"
+        />
+
+    <TextView
+        android:id="@+id/title"
+        android:text="'Nombre d'argent donné (négatif = le centre donne de l'argent audépendant): '"
+        android:textAlignment="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/numberOfBaskets"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:paddingTop="60dp"
+        />
+
+    <EditText
+        android:id="@+id/balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/title"
+        android:text="Enter Number"
+        android:ems="10"
+        android:inputType="number"
+        />
+    <Switch
+        android:id="@+id/livraison"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/balance"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="40dp"
+        android:textSize="20sp"
+        android:text="Livraison "
+        />
+    <Switch
+        android:id="@+id/deppanage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/livraison"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="15dp"
+        android:textSize="20sp"
+        android:text="D'épannage d'urgence "
+        />
+    <Switch
+        android:id="@+id/panierNoel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/deppanage"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="15dp"
+        android:textSize="20sp"
+        android:text="Pannier Noel "
+        />
+
+
+
+    <Button
+        android:id="@+id/addBasket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/scanAgainBtn"
+        android:layout_marginBottom="30dp"
+        android:text="Ajouter Un Panier"
+        android:textSize="30sp" />
+
     <Button
         android:id="@+id/scanAgainBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Scan Again"
         android:textSize="30sp"
-        android:gravity="bottom"
-
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
         />
+
+
 
 </RelativeLayout>

@@ -9,7 +9,7 @@ import okhttp3.RequestBody;
 
 public class HttpUtils {
 
-    public static final String DEFAULT_BASE_URL = "http://192.168.0.193/api/";
+    public static final String DEFAULT_BASE_URL = "http://192.168.0.194/api/";
 
     private static String baseUrl;
     private static OkHttpClient client = new OkHttpClient();
@@ -30,6 +30,7 @@ public class HttpUtils {
     }
 
     private static String getAbsoluteUrl(String relativeUrl) {
+        System.out.println("The URL is: "+baseUrl + relativeUrl);
         return baseUrl + relativeUrl;
     }
 }
