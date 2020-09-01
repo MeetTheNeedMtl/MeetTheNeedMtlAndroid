@@ -6,115 +6,184 @@
     android:layout_height="match_parent"
     tools:context=".ResultsActivity">
 
-    <TextView
-        android:id="@+id/name"
-        android:text="name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:textSize="30sp"
-        android:textColor="#000000"
-        android:paddingTop="10dp"
-       />
-    <TextView
-        android:id="@+id/birthday"
-        android:text="birthday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/name"
-        android:textSize="30sp"
-        android:textColor="#000000"
-        android:paddingTop="10dp"
-        />
-    <TextView
-        android:id="@+id/numberOfBaskets"
-        android:text="numBaskets"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/birthday"
-        android:textSize="30sp"
-        android:textColor="#000000"
-        android:paddingTop="10dp"
-        />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/addBasket"
+        android:id="@+id/scrollView" >
 
-    <TextView
-        android:id="@+id/title"
-        android:text="'Nombre d'argent donné (négatif = le centre donne de l'argent audépendant): '"
-        android:textAlignment="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/numberOfBaskets"
-        android:textSize="20sp"
-        android:textColor="#000000"
-        android:paddingTop="60dp"
-        />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/balance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/title"
-        android:text="Enter Number"
-        android:ems="10"
-        android:inputType="number"
-        />
-    <Switch
-        android:id="@+id/livraison"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/balance"
-        android:layout_centerHorizontal="true"
-        android:paddingTop="40dp"
-        android:textSize="20sp"
-        android:text="Livraison "
-        />
-    <Switch
-        android:id="@+id/deppanage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/livraison"
-        android:layout_centerHorizontal="true"
-        android:paddingTop="15dp"
-        android:textSize="20sp"
-        android:text="D'épannage d'urgence "
-        />
-    <Switch
-        android:id="@+id/panierNoel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/deppanage"
-        android:layout_centerHorizontal="true"
-        android:paddingTop="15dp"
-        android:textSize="20sp"
-        android:text="Pannier Noel "
-        />
+            <TextView
+                android:id="@+id/name"
+                android:text="name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:paddingTop="10dp"
+                />
+            <TextView
+                android:id="@+id/birthday"
+                android:text="birthday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/name"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:paddingTop="5dp"
+                />
+            <TextView
+                android:id="@+id/numberOfBaskets"
+                android:text="numBaskets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/birthday"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:paddingTop="5dp"
+                />
 
+            <TextView
+                android:id="@+id/title"
+                android:text="Nombre d'argent donné (négatif = le centre donne de l'argent audépendant):"
+                android:textAlignment="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/numberOfBaskets"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:paddingTop="30dp"
+                />
+
+            <EditText
+                android:id="@+id/balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/title"
+                android:maxLength="7"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                />
+            <Switch
+                android:id="@+id/livraison"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/balance"
+                android:layout_centerHorizontal="true"
+                android:paddingTop="20dp"
+                android:textSize="20sp"
+                android:text="Livraison "
+                />
+            <Switch
+                android:id="@+id/depannage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/livraison"
+                android:layout_centerHorizontal="true"
+                android:paddingTop="15dp"
+                android:textSize="20sp"
+                android:text="D'épannage d'urgence "
+                />
+            <Switch
+                android:id="@+id/panierNoel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/depannage"
+                android:layout_centerHorizontal="true"
+                android:paddingTop="15dp"
+                android:textSize="20sp"
+                android:text="Pannier Noel "
+                />
+
+            <TextView
+                android:id="@+id/rpTxt"
+                android:text="Preuve de résidence montrée (requis): "
+                android:textAlignment="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/panierNoel"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:paddingTop="10dp"
+                />
+
+            <Spinner
+                android:id="@+id/residenceProof"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rpTxt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+
+                />
+
+            <TextView
+                android:id="@+id/stTxt"
+                android:text="Preuve de étudiant montrée (requis): "
+                android:textAlignment="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/residenceProof"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:paddingTop="10dp"
+                />
+
+            <Spinner
+                android:id="@+id/studentProof"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/stTxt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="30dp"
+
+                />
+
+
+            />
+
+
+        </RelativeLayout>
+
+        </ScrollView>
 
 
     <Button
         android:id="@+id/addBasket"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_above="@id/scanAgainBtn"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="20dp"
         android:text="Ajouter Un Panier"
-        android:textSize="30sp" />
+        android:textSize="20dp"
+        android:backgroundTint="@color/colorPrimary"
+        />
 
     <Button
         android:id="@+id/scanAgainBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Scan Again"
-        android:textSize="30sp"
+        android:text="Lire À Nouveau"
+        android:textSize="20dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/colorPrimary"
         />
 
 

@@ -10,4 +10,9 @@
     <string name="loginInvalidText">Username or password is empty.</string>
     <string name="loginUnsuccessfulText">Login Unsuccessful: Invalid username/password</string>
     <string name="loginSuccessText">Login Successful</string>
+    <string-array name="student_proof_options">
+        <item>Oui</item>
+        <item>Oui mais na pas sa preuve détude</item>
+        <item>Non</item>
+    </string-array>
 </resources>
