@@ -1,5 +1,11 @@
 package com.example.qrcodescanner;
 
+/*
+ * Copyright (C) 2020 Daniel Bucci
+ * This file is subject to the terms and conditions defined in
+ * file "LICENSE.txt", which is part of this source code package.
+ */
+
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.MediaType;
@@ -9,7 +15,7 @@ import okhttp3.RequestBody;
 
 public class HttpUtils {
 
-    public static final String DEFAULT_BASE_URL = "http://192.168.0.194/api/";
+    public static final String DEFAULT_BASE_URL = "http://192.168.0.92/api/";
 
     private static String baseUrl;
     private static OkHttpClient client = new OkHttpClient();

@@ -5,6 +5,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+/*
+ * Copyright (C) 2020 Daniel Bucci
+ * This file is subject to the terms and conditions defined in
+ * file "LICENSE.txt", which is part of this source code package.
+ */
+
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
